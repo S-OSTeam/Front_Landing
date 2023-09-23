@@ -35,7 +35,7 @@ const User = ({ name, phone }: UserProps) => {
     };
 
     const onDeletecomplete = () => {
-        window.location.reload();
+        window.location.replace("/user");
     };
 
     return (

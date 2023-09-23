@@ -9,7 +9,7 @@ interface UserListProps{
 const UserList = ({data}:UserListProps) => {
     return (
         <Box>
-            {data.getPeople.map((user:{id:string, name:string, phone:string}, index:number)=>{
+            {data.getPeople.map((user:{id:string, name:string, phone:string})=>{
                return (
                    <User key={user.id} name={user.name} phone={user.phone}/>
                )

@@ -63,7 +63,7 @@ const LoginUserPage = () => {
     }
 
     const onInsertComplete = () => {
-        window.location.reload();
+        window.location.replace("/user");
     }
 
     // query로딩시 로딩화면출력
