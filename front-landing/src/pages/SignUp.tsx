@@ -50,6 +50,7 @@ const SignUp = () => {
         navigate("/signup");
     };
 
+    // rest api axios를 이용해서 메일전송 api 호출
     const onEmail = () => {
         axios.post("https://moviethree.synology.me/back/auth/mail",{
             email
@@ -67,6 +68,7 @@ const SignUp = () => {
         });
     };
 
+    // 메일전송 받은 인증코드를 api에 전송하여 인증확인
     const onAuthCode = () => {
         axios.post("https://moviethree.synology.me/back/auth/code", {
             authCode,

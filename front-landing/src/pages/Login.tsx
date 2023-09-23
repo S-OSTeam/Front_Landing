@@ -24,6 +24,7 @@ const Login = () => {
         setPW(event.currentTarget.value);
     }
 
+    // rest api 로그인 연동
     const onLoginClick = () => {
         axios.post("https://moviethree.synology.me/back/user/login", {
             id:ID,
@@ -34,12 +35,10 @@ const Login = () => {
                 setAccessToken(accessToken);
                 setRefreshToken(refreshToken)
                 console.log("로그인 되었습니다.");
-                console.log(response.data);
-                console.log(response.data);
                 localStorage.clear()
                 localStorage.setItem('accessToken', `${accessToken}`);
                 localStorage.setItem('refreshToken', `${refreshToken}`);
-                navigate("/");
+                navigate("/user");
             } else {
                 console.log("로그인이 실패했습니다.");
             }
@@ -47,11 +46,13 @@ const Login = () => {
             console.log(error);
         });
     }
-
+    
+    // 라우터에 적용시킨 회원가입 페이지로 이동
     const onSignUpClick = () => {
         navigate("/signup");
     }
 
+    // 포커스
     const inputRef = useRef<HTMLInputElement>(null);
     useLayoutEffect(() => {
         if (inputRef.current !== null) {
