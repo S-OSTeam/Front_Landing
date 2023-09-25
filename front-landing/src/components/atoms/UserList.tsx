@@ -6,6 +6,7 @@ interface UserListProps{
     data:any;
 }
 
+// 테스트2
 // 데이터타입
 const UserList = ({data}:UserListProps) => {
     return (
